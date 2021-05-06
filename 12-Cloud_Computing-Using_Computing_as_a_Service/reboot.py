@@ -1,3 +1,5 @@
+# Code to reboot an EC2 instance (configured with 'aws configure')
+
 import boto3
 from botocore.exceptions import ClientError
 
@@ -8,6 +10,7 @@ def getFirstInstanceID(ec2):
     first = all_instances['Reservations'][0]['Instances'][0]
     # Return the ID
     return first['InstanceId']
+
 
 def main():
     # Create an EC2 Client

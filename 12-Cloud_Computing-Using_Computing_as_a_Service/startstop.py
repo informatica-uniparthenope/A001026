@@ -1,3 +1,5 @@
+# Code to stop/run an EC2 instance (configured with 'aws configure')
+
 import boto3
 from botocore.exceptions import ClientError
 

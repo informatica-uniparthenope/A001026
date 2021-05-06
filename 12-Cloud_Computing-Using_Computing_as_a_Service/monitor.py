@@ -1,3 +1,5 @@
+# Simple code to monitor/unmonitor an EC2 instance (configured with 'aws configure')
+
 import boto3
 
 EC2_TYPE = 'UNMONITOR'
