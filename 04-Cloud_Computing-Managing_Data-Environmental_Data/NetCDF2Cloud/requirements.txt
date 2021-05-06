@@ -1,0 +1,4 @@
+NetCDF4
+numpy
+apache-libcloud
+boto3
