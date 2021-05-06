@@ -1,1 +1,2 @@
 boto3==1.17.67
+cloudstorage==0.11.0
