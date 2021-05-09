@@ -1,0 +1,27 @@
+import boto3
+import sys
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-m","--Mode_Monitor", required=True, type=bool, default=True,
+        help="Enable detailed monitoring for a running instance")
+ap.add_argument("-i","--ID_Instance", required=True, type=str,
+        help="The ID of the instance to monitor")
+args = vars(ap.parse_args())
+
+# Input Parameters
+Mode_Monitor = args["Mode_Monitor"]
+ID_Instance = args["ID_Instance"]
+
+# Creation of the instance EC2
+ec2 = boto3.client('ec2')
+
+response = None
+
+# PROBLEMA ID DELL'ISTANZA DICE CHE NON ESISTE
+if Mode_Monitor:
+        response = ec2.monitor_instances(InstanceIds=[ID_Instance])
+else:
+        response = ec2.unmonitor_instances(InstanceIds=[ID_Instance])
+
+print(response)
